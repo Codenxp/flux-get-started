@@ -34,7 +34,7 @@ spec:
         - "1"
       containers:
       - name: podinfod
-        image: registry.cn-shanghai.aliyuncs.com/pattern/ecs-application-packaging:3
+        image: registry.cn-shanghai.aliyuncs.com/pattern/ecs-application-packaging:31
         #image: stefanprodan/podinfo:2.1.3
         imagePullPolicy: IfNotPresent
         ports:
@@ -42,14 +42,15 @@ spec:
           name: http
           protocol: TCP
         command:
-        - ./podinfo
-        - --port=9898
-        - --level=info
-        - --random-delay=false
-        - --random-error=false
+        - echo PODINFO_UI_MESSAGE
+#         - ./podinfo
+#         - --port=9898
+#         - --level=info
+#         - --random-delay=false
+#         - --random-error=false
         env:
         - name: PODINFO_UI_MESSAGE
-          value: "Welcome ali first tests!"
+          value: "Welcome ali second tests!"
         livenessProbe:
           httpGet:
             path: /healthz
