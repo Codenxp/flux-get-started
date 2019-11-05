@@ -41,7 +41,7 @@ spec:
         - containerPort: 9898
           name: http
           protocol: TCP
-#         command:
+        command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
 #         - ./podinfo
 #         - --port=9898
 #         - --level=info
