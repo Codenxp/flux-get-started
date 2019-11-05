@@ -9,7 +9,7 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.init: regex:^3.10.*
-    fluxcd.io/tag.podinfod: semver:~2.1
+    fluxcd.io/tag.ecs-application-packaging: semver:~3
 spec:
   strategy:
     rollingUpdate:
@@ -33,7 +33,8 @@ spec:
         - "1"
       containers:
       - name: podinfod
-        image: stefanprodan/podinfo:2.1.0
+        image: registry.cn-shanghai.aliyuncs.com/pattern/ecs-application-packaging:3
+#        image: stefanprodan/podinfo:2.1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9898
@@ -63,3 +64,5 @@ spec:
           requests:
             cpu: 10m
             memory: 64Mi
+      imagePullSecrets:
+        - name: docker-registry-key

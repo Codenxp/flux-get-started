@@ -4,3 +4,9 @@ metadata:
   labels:
     name: demo
   name: demo
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: docker-registry-key
+type: Opaque
