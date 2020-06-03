@@ -49,7 +49,7 @@ spec:
 #         - --random-error=false
         env:
         - name: PODINFO_UI_MESSAGE
-          value: "Welcome ali second tests!"
+          value: "Welcome ali new tests!"
 #         livenessProbe:
 #           httpGet:
 #             path: /healthz
